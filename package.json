@@ -1,0 +1,37 @@
+{
+  "name": "ray-drag-resize-v3",
+  "private": false,
+  "version": "0.1.2",
+  "type": "module",
+  "files": ["lib"],
+  "main": "./lib/drag-resize-v3.umd.js",
+  "module": "./lib/drag-resize-v3.js",
+  "exports": {
+    ".": {
+      "import": "./lib/drag-resize-v3.js",
+      "require": "./lib/drag-resize-v3.umd.js"
+    },
+    "./lib/style.css": {
+      "import": "./lib/style.css",
+      "require": "./lib/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^18.7.14",
+    "sass": "^1.54.8",
+    "uuid": "^8.3.2",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.39.5"
+  }
+}
