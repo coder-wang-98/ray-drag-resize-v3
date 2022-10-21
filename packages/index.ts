@@ -1,6 +1,7 @@
-import dragResize from './src/index.vue'
-import {App} from 'vue'
-const install = (app:App,opt?:dragResizeProps) =>{
-  app.component(dragResize.name,dragResize)
+import dragResize from './src/DragResize.vue'
+import { App } from 'vue'
+
+const install = (app:App) => {
+    app.component(dragResize.name, dragResize)
 }
 export default install
