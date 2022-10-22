@@ -176,6 +176,21 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    /*滚动条的滑块*/
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(185, 221, 255);
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(24,144,255,.8);
+    }
   }
   &:active{
     background-color: rgba(119, 221, 178, 0.3);
