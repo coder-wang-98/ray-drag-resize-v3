@@ -15,6 +15,25 @@
       node-key="test"
       style="position:absolute;width:100px;height:100px"
       :init="{
+        width:100,
+        height:100,
+        top:10,
+        left:20
+      }"
+      :disabled="'resize'"
+      @on-drag-resize="handle"
+    >
+      <img
+        src="https://img-operation.csdnimg.cn/csdn/silkroad/img/1666351122370.jpg"
+        alt=""
+        style="width:100%;height:100%"
+      >
+    </drag-resize>
+    <drag-resize
+      class="test"
+      node-key="test"
+      style="position:absolute;width:100px;height:100px"
+      :init="{
         width:200,
         height:100,
         top:10,
@@ -22,6 +41,11 @@
       }"
       @on-drag-resize="handle"
     >
+      <img
+        src="https://img-operation.csdnimg.cn/csdn/silkroad/img/1666351122370.jpg"
+        alt=""
+        style="width:100%;height:100%"
+      >
     </drag-resize>
   </div>
 </template>
@@ -29,6 +53,7 @@
 import { ref } from 'vue'
 
 const list = ref<number[]>([])
+const text = ref('123')
 for (let index = 0; index < 70; index++) {
     list.value.push(index)
 }
