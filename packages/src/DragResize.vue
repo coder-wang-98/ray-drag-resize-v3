@@ -1,12 +1,14 @@
 <template>
   <div
     ref="dragResize"
-    class="drag-resize-container"
+    class="drag-resize"
     :class="judgeDisabled(disabled,'drag') ? 'disabled':''"
     @mousedown="onDrag"
   >
-    <slot>
-    </slot>
+    <div class="drag-resize-container">
+      <slot>
+      </slot>
+    </div>
     <div
       v-if="!judgeDisabled(disabled,'resize')"
       ref="resizeNode"
@@ -164,12 +166,17 @@ onMounted(() => {
 })
 </script>
 <style scoped lang='scss'>
-.drag-resize-container{
+.drag-resize{
   position: absolute;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   padding: 10px;
+  .drag-resize-container{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
   &:active{
     background-color: rgba(119, 221, 178, 0.3);
     .resize-node {
@@ -177,6 +184,7 @@ onMounted(() => {
       right: 0px;
       width: 20px;
       height: 20px;
+      z-index: 999;
     }
   }
   &:hover{
